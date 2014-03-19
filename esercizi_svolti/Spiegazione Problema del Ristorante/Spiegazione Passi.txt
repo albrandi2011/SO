@@ -1,0 +1,33 @@
+ANALISI DEL PROGRAMMA:
+
+
+
+
+ Il testo richiede di gestire la sincronizzazione di un gruppo di clienti (che accedono ai primi ed ai secondi),
+ del cameriere dei primi e dei camerieri dei secondi. Vi saranno 3 procedure che identificano quindi 3 tipi di thread:
+-cliente;
+-cameriere_primi;
+-cameriere_secondi;
+
+ L'idea implementativa consiste nel considerare i clienti come dei thread che vengono creati continuamente, mentre i 3 camerieri
+ come thread creati una volta sola. All'arrivo di ogni cliente verrà inviato un segnale al cameriere dei primi (mediante un event)
+ e se il cameriere risulterà libero (l'event è protetto da un mutex) quest'ultimo preparerà il primo per il cliente e invierà un
+ segnale (tramite un altro event) al cliente. Medesimo ragionamento viene adoperato per i camerieri dei secondi.
+ Mediante un vettore di due mutex si controlla quale dei due camerieri dei secondi è libero, si attende mediante una
+ WaitForMultipleObjects quale dei due è disponibile, e in base all'indice del vettore dei mutex si farà riferimento ad uno di
+ due event creati per i camerieri. Dopo l'acquisizione il cameriere dei secondi preparerà il secondo per il cliente e userà
+ un altro event per comunicare al cliente che il piatto è pronto. Il cliente dopodichè cerca un posto libero in un semaforo creato
+ per i posti disponibili ove sedersi, attende il tempo di nutrirsi, e poi esce. E' opportuno, per ciascun event, resettarlo
+ subito dopo averlo usato (a me altrimenti dava problemi), per il codice completo te lo passo al più presto!!!
+ 
+Ricapitolando si avrà:
+
+-Semaforo per il numero dei posti a sedere liberi;
+-Event event_primi per la comunicazione tra cliente e cameriere dei primi;
+-Mutex mutex_primi per la mutua esclusione dell'event event_primi;
+-Un vettore di 2 componenti event_secondi per la comunicazione tra cliente ed uno tra i 2 camerieri dei secondi;
+-Un vettore di 2 componenti mutex_secondi per la mutua esclusione degli event (gli indici usati dai due vettori sono molto utili!);
+-Un event primo_pronto dal cameriere dei primi al cliente per indicare che il primo è pronto (non necessita di mutex);
+-Un vettore di event secondo_pronto per i camerieri dei secondi verso il cliente;
+ 
+In totale 5 event, 3 mutex ed 1 semaforo

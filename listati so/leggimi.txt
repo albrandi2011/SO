@@ -1,0 +1,60 @@
+Libri consigliati
+-----------------
+- The Linux Programming Interface - A Linux and Unix System Programming
+  Handbook
+- The GNU C Library Reference Manual
+- The Little Book of Semaphores
+- GaPiL: Guida alla Programmazione Linux
+- Advanced Linux Programming
+
+*** Note ***
+------------
+
+per installare le manpages su ubuntu:
+-------------------------------------
+sudo apt-get install manpages manpages-it manpages-dev manpages-posix
+ manpages-posix-dev
+
+per leggere una pagina del manpanges:
+-------------------------------------
+man <sezione>  <funzione>
+la sezione e' tipicamente 3, qualche volta sara' 7
+esempio: man 3 fopen
+nota: premere il tasto q per uscire dal man, NON Esc
+
+ordine di lettura dei sorgenti di esempio
+(considerare pure l'header relativo):
+------------------------------------------
+ 1. ncpu.c                  (lez01)
+ 2. ntime.c                 (lez02)
+ 3. 2fork_messy.c           (lez03)
+ 4. 2fork_zombie.c          (lez03)
+ 5. 2fork.c                 (lez03)
+ 6. nfork.c                 (lez04)
+ 7. bad_pipe.c              (lez04)
+ 8. pipe.c                  (lez04)
+ 9. pipe2.c                 (lez05)
+10. pipe2_messy.c           (lez05)
+11. bad_pipeline.c          (lez06)
+12. almost_good_pipeline.c  (lez06)
+13. pipeline.c              (lez07)
+14. usr_signal1.c           (lez07)
+15. usr_signal2.c           (lez08)
+16. usr_signal3.c           (lez08)
+17. sig_suspend.c           (lez09)
+18. sig_chld.c              (lez09)
+19. only_one.c              (lez10)
+20. other_one.c             (lez10)
+21. pipe_select.c           (lez10)
+22. fifo.c                  (lez10)
+23. thread.c                (lez11)
+24. mutex.c                 (lez11)
+25. spinlock.c              (lez12)
+26. spinlock_cancel.c       (lez12)
+27. rwlock.c                (lez12)
+28. rwlock_cancel.c         (lez12)
+29. cond_as_semaphore.c     (lez13)
+30. process_mutex.c         (lez13)
+31. semaphore_to_barrier.c  (lez14)
+32. dining_phil.c           (lez15)
+33. thread_dining_phil.c    (lez15)
