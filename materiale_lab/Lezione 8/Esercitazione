@@ -1,0 +1,1 @@
+Dato in input una immagine formato raw 100x100 a livelli di grigio con codifica di 1 byte per pixel, calcolare il valore medio dell'immagine. Il padre genera 10 figli , ogni figlio calcola la media per una finestra 10x100, e comunica al padre il risultato parziale. la media sara' < di 255 quindi si può usare exit e waitpid status per comunicare l'informazione al padre
