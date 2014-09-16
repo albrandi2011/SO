@@ -1,0 +1,8 @@
+Link utili
+==========
+
+Gestione base dei processi Linux in C:
+  http://antoniotancredi.altervista.org/2009/12/30/gestione-base-dei-processi-in-linux-tramite-c/
+
+Librerie standard in C per la gestione dei processi:
+  http://digilander.libero.it/uzappi/C/librerie/C-processi.html

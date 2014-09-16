@@ -1,1 +1,0 @@
-gcc file.c -lpthread -lm -o file
