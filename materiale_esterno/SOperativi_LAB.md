@@ -1,4 +1,4 @@
-Funzioni processi
+## Funzioni processi
 
 pid_t fork (void) 
 	esempio: fork ( )
@@ -14,7 +14,7 @@ void exit (int stato)
 	e.g. se il programma giunge alla fine del codice 
 
 
-
+```c
 /****************************** CODICE **************************************/
 #include <stdio.h>
 #include <sys/types.h>
@@ -33,14 +33,14 @@ void main( )
 		 }
 }
 /***************************************************************************/
-
+```
 
 
 pid_t getpid ()
 	- Restituisce al processo che la chiama il valore del suo pid
 
 
-
+```c
 /***************************** CODICE **************************************/
 #include <stdio.h>
 #include <sys/types.h>
@@ -61,7 +61,7 @@ void main( )
 		 }
 }
 /***************************************************************************/
-
+```
 
 pid_t wait (int *)
 	- Sospende l’esecuzione del processo che la esegue e attende la
@@ -91,7 +91,7 @@ pid_t wait (int *)
 			di exit moltiplicato per 256
 
 
-
+```c
 /***************************** CODICE **************************************/
 #include <stdio.h>
 #include <sys/types.h>
@@ -115,7 +115,7 @@ void main( )
 		}
 }
 /***************************************************************************/
-
+```
 
 
 pid_t waitpid (pid_t pid, int * stato, int opzioni)
@@ -160,7 +160,7 @@ cui eseguibile si trova nel file nome_programma e gli passa come
 parametri (per indirizzo: sono puntatori) arg0, arg1, …)
 
 
-
+```c
 /***************************** CODICE **************************************/
 #include <stdio.h>
 void main (int argc, char *argv[ ] )
@@ -174,7 +174,8 @@ void main (int argc, char *argv[ ] )
 		
 }
 /***************************************************************************/
-
+```
+```c
 /***************************** CODICE **************************************/
 #include <stdio.h>
 #include <sys/types.h>
@@ -191,7 +192,7 @@ void main( )
 	printf("errore di exec"); 	/*normalmente non si arriva qui!*/
 }
 /***************************************************************************/
-
+```
 
 Altre versioni di exec
 	- execv: sostituisce alla lista di stringhe di exec1 un puntatore
@@ -201,7 +202,7 @@ Altre versioni di exec
 	- execle e execve hanno un parametro in più che specifica l’ambiente 
 	di esecuzione del processo.
 
-
+```c
 /***************************** CODICE **************************************/
 #include <stdio.h>
 #include <sys/types.h>
@@ -230,9 +231,9 @@ void main( )
 	}
 }
 /***************************************************************************/
+```
 
-
-
+```c
 /***************************** CODICE **************************************/
 main()
 {
@@ -256,5 +257,4 @@ main()
 		exit();   }
 }
 /***************************************************************************/
-
-
+```

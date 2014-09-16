@@ -1,8 +1,5 @@
 ANALISI DEL PROGRAMMA:
 
-
-
-
  Il testo richiede di gestire la sincronizzazione di un gruppo di clienti (che accedono ai primi ed ai secondi),
  del cameriere dei primi e dei camerieri dei secondi. Vi saranno 3 procedure che identificano quindi 3 tipi di thread:
 -cliente;
